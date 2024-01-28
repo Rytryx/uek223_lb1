@@ -1,64 +1,62 @@
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
-.login-register-container {
-    width: 300px;
+.container {
+    width: 80%;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 20px;
 }
 
-.tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 10px;
+    margin-bottom: 20px;
 }
 
-.tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
+.header-buttons {
+    display: flex;
+    gap: 10px;
 }
 
-.tab button:hover {
-    background-color: #ddd;
+.post-creation {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
 }
 
-.tab button.active {
-    background-color: #ccc;
-}
-
-.tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
-}
-
-input[type=text], input[type=password], input[type=email] {
+textarea {
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
 button {
+    padding: 10px 20px;
     background-color: #4CAF50;
     color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
-    width: 100%;
+    font-size: 1em;
 }
 
 button:hover {
     opacity: 0.8;
+}
+
+.posts {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
