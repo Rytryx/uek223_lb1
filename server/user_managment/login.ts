@@ -4,7 +4,6 @@ import { Database } from '../database/database';
 
 const db = new Database();
 
-// Einloggen und Token generieren
 export async function login(req: Request, res: Response) {
     try {
         const { username, password } = req.body;

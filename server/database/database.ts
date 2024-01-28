@@ -1,6 +1,6 @@
 import mariadb from 'mariadb'
 import { Pool } from 'mariadb'
-import { USER_TABLE, TWEET_TABLE } from './schema'
+import { USER_TABLE, TWEET_TABLE, COMMENT_TABLE } from './schema'
 
 export class Database {
   // Properties

@@ -48,19 +48,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function openTab(event, tabName) {
-        // Alle Tabinhalte verstecken
         var tabcontent = document.getElementsByClassName("tabcontent");
         for (var i = 0; i < tabcontent.length; i++) {
             tabcontent[i].style.display = "none";
         }
     
-        // Alle Tabs deaktivieren
         var tablinks = document.getElementsByClassName("tablinks");
         for (var i = 0; i < tablinks.length; i++) {
             tablinks[i].className = tablinks[i].className.replace(" active", "");
         }
     
-        // Das aktuelle Tab anzeigen und als aktiv markieren
         document.getElementById(tabName).style.display = "block";
         event.currentTarget.className += " active";
     }

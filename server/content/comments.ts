@@ -50,4 +50,20 @@ router.delete('/comment/:id', async (req: Request, res: Response) => {
     }
 });
 
+router.get('/comments/:tweetId', async (req: Request, res: Response) => {
+    const { tweetId } = req.params;
+    console.log(`Fetching comments for tweetId: ${tweetId}`);
+
+    try {
+        const database = new Database();
+        const comments = await database.executeSQL(`SELECT * FROM comments WHERE tweet_id = '${tweetId}'`);
+        console.log(`Comments retrieved: ${JSON.stringify(comments)}`);
+        res.status(200).json(comments);
+    } catch (error) {
+        console.log(`Error fetching comments: ${error}`);
+        res.status(500).send('Interner Serverfehler');
+    }
+});
+
+
 export default router;
