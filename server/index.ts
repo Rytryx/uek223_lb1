@@ -3,13 +3,8 @@ import http from 'http';
 import { resolve, dirname } from 'path';
 import { API } from './api';
 import { Database } from './database';
-import registrationRouter from './identity_management/register';
 import postsRouter from './content/posts';
 import commentsRouter from './content/comments';
-import likesRouter from './content/likes';
-import feedRouter from './content/feed';
-import profileRouter from './identity_management/profile';
-import loginRouter from './identity_management/login';
 
 class Backend {
   // Properties
