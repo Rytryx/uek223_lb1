@@ -1,6 +1,10 @@
 {
   "extends": "airbnb-base",
+  "env": {
+    "browser": true
+  },
   "rules": {
-    "no-console": "warn"
+    "no-console": "warn",
+    "linebreak-style": ["error", "windows"]
   }
 }
