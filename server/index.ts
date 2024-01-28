@@ -37,13 +37,8 @@ class Backend {
       res.sendFile(__dirname + '/client/index.html');
     });
 
-    this._app.use('/api/register', registrationRouter);
     this._app.use('/api/posts', postsRouter);
     this._app.use('/api/comments', commentsRouter);
-    this._app.use('/api/likes', likesRouter);
-    this._app.use('/api/feed', feedRouter);
-    this._app.use('/api/profile', profileRouter);
-    this._app.use('/api/login', loginRouter);
   }
 
   private startServer(): void {
