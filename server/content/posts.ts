@@ -3,6 +3,23 @@ import { Database } from '../database/database';
 
 const router = express.Router();
 
+router.get('/', async (req: Request, res: Response) => {
+    try {
+        const database = new Database();
+        const posts = await database.executeSQL(`
+            SELECT tweets.*, users.username 
+            FROM tweets 
+            JOIN users ON tweets.user_id = users.id
+        `);
+        console.log("Abgefragte Posts:", posts);
+        res.status(200).json(posts);
+    } catch (error) {
+        console.log("Fehler beim Abrufen der Posts:", error);
+        res.status(500).send('Interner Serverfehler');
+    }
+});
+
+
 router.post('/post', async (req: Request, res: Response) => {
     const { userId, content } = req.body;
     if (!userId || !content) {
