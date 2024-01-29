@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { generateToken } from './jwt';
 import { Database } from '../database/database';
 
+const router = express.Router();
 const db = new Database();
 
 export async function login(req: Request, res: Response) {
@@ -25,3 +26,5 @@ export async function login(req: Request, res: Response) {
         res.status(500).json({ message: 'Interner Serverfehler' });
     }
 }
+
+export default router;

@@ -1,4 +1,4 @@
-async function loadPosts() {
+export async function loadPosts() {
     try {
         const response = await fetch('/api/posts');
         if (!response.ok) {
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-async function editPost(postId) {
+export async function editPost(postId) {
     const newContent = prompt('Geben Sie den neuen Inhalt für den Post ein:');
     if (newContent) {
         try {
@@ -91,7 +91,7 @@ async function editPost(postId) {
     }
 }
 
-async function deletePost(postId) {
+export async function deletePost(postId) {
     try {
         const response = await fetch(`/api/posts/post/${postId}`, {
             method: 'DELETE',
@@ -109,7 +109,7 @@ async function deletePost(postId) {
     }
 }
 
-async function loadComments(postId) {
+export async function loadComments(postId) {
     try {
         console.log(`Loading comments for postId: ${postId}`);
         const response = await fetch(`/api/comments/${postId}`);
@@ -135,7 +135,7 @@ async function loadComments(postId) {
     }
 }
 
-async function addComment(postId) {
+export async function addComment(postId) {
     const content = document.getElementById(`new-comment-${postId}`).value;
     const userId = 1;
 
@@ -164,7 +164,7 @@ async function addComment(postId) {
     }
 }
 
-async function editComment(commentId) {
+export async function editComment(commentId) {
     const commentContent = document.getElementById(`comment-content-${commentId}`);
     const newContent = prompt('Geben Sie den neuen Inhalt für den Kommentar ein:', commentContent.textContent);
 

@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
 import { Database } from '../database/database';
 
-const router = express.Router();
+export const router = express.Router();
 
 router.get('/', async (req: Request, res: Response) => {
     try {
